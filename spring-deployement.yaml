@@ -1,3 +1,4 @@
+---
 kind: Service
 apiVersion: v1
 metadata:
@@ -5,30 +6,30 @@ metadata:
   labels:
     name: traffic
 spec:
-  ports: 
-     - port: 8080      
-       targetPort: 8080  
-       protocol: TCP
-  selector:           
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
     app: traffic
-  type: ClusterIP       
+  type: ClusterIP
 
 ---
-apiVersion: apps/v1 
-kind: Deployment    
-metadata:              
+apiVersion: apps/v1
+kind: Deployment
+metadata:
   name: traffic
-spec:                
-  selector:         
+spec:
+  selector:
     matchLabels:
       app: traffic
   template:
     metadata:
-      labels:        
+      labels:
         app: traffic
     spec:
       containers:
-      - name: traffic
-        image: vkatkar1998/traffic:latest
-        ports:
-        - containerPort: 8080
+        - name: traffic
+          image: vkatkar1998/traffic:latest
+          ports:
+            - containerPort: 8080
