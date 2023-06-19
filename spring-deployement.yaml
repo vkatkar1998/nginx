@@ -30,6 +30,6 @@ spec:
     spec:
       containers:
         - name: traffic
-          image: vkatkar1998/traffic:latest
+          image: vkatkar1998/traffic
           ports:
             - containerPort: 8080
