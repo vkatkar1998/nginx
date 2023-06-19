@@ -28,9 +28,7 @@ spec:
         app: traffic
     spec:
       containers:
-        - name: traffic
-          image: vkatkar1998/traffic:latest
-          ports:
-            - containerPort: 8080
-               
-        
+      - name: traffic
+        image: vkatkar1998/traffic:latest
+        ports:
+          - containerPort: 8080
